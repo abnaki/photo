@@ -1,16 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio Express 2013 for Windows Desktop
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "photo.exif", "photo.exif\photo.exif.csproj", "{13800742-9FFF-4ED1-8D5D-259EC188BD6B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "photo.exif.unit.test", "photo.exif.unit.test\photo.exif.unit.test.csproj", "{E347BCBC-AC0F-4973-824D-A9100B7F70C4}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{0930ACDE-269C-45DF-A1FD-1F449006D5A7}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "photo.exif.sample", "photo.exif.sample\photo.exif.sample.csproj", "{D3076460-5D3E-4F87-B868-53FD7CFA0D1A}"
 EndProject
