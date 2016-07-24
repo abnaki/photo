@@ -45,11 +45,11 @@ namespace photo.exif
                 case ExifType.UInt32:
                     return BitConverter.ToUInt32(bytes.Safe(4), 0);
                 case ExifType.URational:
-                    return new URational
-                               {
-                                   Denominator = BitConverter.ToUInt32(bytes, 4),
-                                   Numerator = BitConverter.ToUInt32(bytes, 0)
-                               };
+                    if (len > 8)
+                        return URationalArray(bytes, len);
+                    else
+                        return URationalFromBytes(bytes, 0);
+
                 case ExifType.Object:
                     return bytes;
                 case ExifType.Int32:
@@ -57,15 +57,46 @@ namespace photo.exif
                 case ExifType.Long:
                     return BitConverter.ToInt64(bytes.Safe(8), 0);
                 case ExifType.Rational:
-                    return new Rational
-                               {
-                                   Denominator = BitConverter.ToInt32(bytes, 0),
-                                   Numerator = BitConverter.ToInt32(bytes, 4)
-                               };
+                    if (len > 8)
+                        return RationalArray(bytes, len);
+                    else
+                        return RationalFromBytes(bytes, 0);
 
                 default:
                     return bytes;
             }
+        }
+
+        static URational URationalFromBytes(byte[] bytes, int offset)
+        {
+            return new URational
+            {
+                Denominator = BitConverter.ToUInt32(bytes, offset + 4),
+                Numerator = BitConverter.ToUInt32(bytes, offset)
+            };
+        }
+
+        static URational[] URationalArray(byte[] bytes, int overallLength)
+        {
+            int n = overallLength / 8;
+
+            return Enumerable.Range(0, n).Select(k => URationalFromBytes(bytes, 8 * k)).ToArray();
+        }
+
+        static Rational RationalFromBytes(byte[] bytes, int offset)
+        {
+            return new Rational
+            {
+                Denominator = BitConverter.ToInt32(bytes, 0),
+                Numerator = BitConverter.ToInt32(bytes, 4)
+            };
+        }
+
+        static Rational[] RationalArray(byte[] bytes, int overallLength)
+        {
+            int n = overallLength / 8;
+
+            return Enumerable.Range(0, n).Select(k => RationalFromBytes(bytes, 8 * k)).ToArray();
         }
 
         public static byte[] Safe(this byte[] bytes, int minimun)
