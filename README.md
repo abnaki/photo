@@ -1,33 +1,6 @@
 Photo Exif  
 ===============
-Available on nuget: https://www.nuget.org/packages/photo.exif
-```Batchfile
-    Install-Package photo.exif
-```
-Description  
-===
-Extract Exchangeable image file format (Exif) from images
 
+Abnaki fork of https://github.com/fraxedas/photo
 
-File path sample  
-===
-```c#
-    var data = _parser.Parse(_path);
-    data.ToList().ForEach(Console.WriteLine);
-```
-
-Stream sample 
-===
-```c#
-    var data = _parser.Parse(new FileStream(_path,FileMode.Open));
-    data.ToList().ForEach(Console.WriteLine);
-```
-
-Result
-===
-Both samples will generate the same result:  
-```
-    256 - ImageWidth = 3264  
-    257 - ImageHeight = 2448  
-    271 - EquipMake = SAMSUNG  
-```
+Improved Converter.cs.   When an array of rationals is required, as in the EXIF standard for GPS Latitude or Longitude, ExifItem.Value will be an array URational[].  In the original code the Value was only the most signficant URational.
