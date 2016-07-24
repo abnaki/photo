@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "photo.exif.unit.test", "pho
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "photo.exif.sample", "photo.exif.sample\photo.exif.sample.csproj", "{D3076460-5D3E-4F87-B868-53FD7CFA0D1A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{346691C5-4A53-4685-B8E0-96EAE766EC37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GpsUnitTest", "Tests\GpsUnitTest\GpsUnitTest.csproj", "{AC17219B-2004-42A3-B210-DE0211D201DD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,8 +31,15 @@ Global
 		{D3076460-5D3E-4F87-B868-53FD7CFA0D1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3076460-5D3E-4F87-B868-53FD7CFA0D1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3076460-5D3E-4F87-B868-53FD7CFA0D1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC17219B-2004-42A3-B210-DE0211D201DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC17219B-2004-42A3-B210-DE0211D201DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC17219B-2004-42A3-B210-DE0211D201DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC17219B-2004-42A3-B210-DE0211D201DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AC17219B-2004-42A3-B210-DE0211D201DD} = {346691C5-4A53-4685-B8E0-96EAE766EC37}
 	EndGlobalSection
 EndGlobal
